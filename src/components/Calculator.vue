@@ -1,10 +1,8 @@
 <template>
-  <div class="calculator">
-    <h1>{{ msg }}</h1>
-    <p>
-      This simple calculator serves as the output - derived from the
-      assessment's interpretation.
-    </p>
+  <div>
+    <h1>{{ title }}</h1>
+    <div class="calculator">calculator here...</div>
+    <p>{{ description }}</p>
   </div>
 </template>
 
@@ -12,7 +10,8 @@
 export default {
   name: "Calculator",
   props: {
-    msg: String
+    title: String,
+    description: String
   }
 };
 </script>
@@ -32,5 +31,11 @@ li {
 }
 a {
   color: #42b983;
+}
+.calculator {
+  border: 1px solid white;
+  max-width: 250px;
+  min-height: 300px;
+  margin: 0 auto;
 }
 </style>
