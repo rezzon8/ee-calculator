@@ -1,28 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <img
+      alt="Vue logo"
+      src="https://www.equalexperts.com/wp-content/themes/equalexperts/assets/logo.svg"
+    />
+    <Calculator msg="The Simple Calculator" />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Calculator from "./components/Calculator.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    Calculator
   }
 };
 </script>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #2c3e50;
+  color: #ffffff;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  padding-top: 1rem;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+img {
+  width: 13rem;
+  opacity: 0.5;
 }
 </style>
