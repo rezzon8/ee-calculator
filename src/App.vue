@@ -4,7 +4,10 @@
       alt="Vue logo"
       src="https://www.equalexperts.com/wp-content/themes/equalexperts/assets/logo.svg"
     />
-    <Calculator msg="The Simple Calculator" />
+    <Calculator
+      title="The Simple Calculator"
+      description="A simple calculator project to illustrate VUE frontend app development"
+    />
   </div>
 </template>
 
