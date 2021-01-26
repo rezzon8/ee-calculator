@@ -23,7 +23,7 @@ export default {
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #2c3e50;
+  background-color: #1795d4;
   color: #ffffff;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   padding-top: 1rem;
