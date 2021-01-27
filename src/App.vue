@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <img
-      alt="Vue logo"
+      alt="Equal Experts Logo"
       src="https://www.equalexperts.com/wp-content/themes/equalexperts/assets/logo.svg"
+      class="animate__animated animate__tada animate__delay-1s"
     />
     <Calculator
       title="The Simple Calculator"
@@ -26,7 +27,6 @@ export default {
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1795d4;
   color: #ffffff;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   padding-top: 1rem;
@@ -35,6 +35,5 @@ export default {
 
 img {
   width: 13rem;
-  opacity: 0.5;
 }
 </style>
