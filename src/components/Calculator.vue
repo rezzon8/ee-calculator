@@ -7,14 +7,14 @@
           <input
             id="calcInputOutput"
             type="number"
-            :value="inputNumber"
+            v-model="inputNumber"
             style="text-align: right; font-weight: bold; margin-bottom: 0;"
           />
         </div>
       </div>
       <div class="row" style="margin-bottom: 0;">
         <button
-          class="btn col s3 waves-effect waves-light function-clear"
+          class="btn col s3 waves-effect waves-light function"
           type="button"
           @click="allClear"
           name="clear"
@@ -22,14 +22,14 @@
           AC
         </button>
         <button
-          class="btn col s3 waves-effect waves-light function-polarity"
+          class="btn col s3 waves-effect waves-light function"
           type="button"
           name="polarity"
         >
           +/-
         </button>
         <button
-          class="btn col s3 waves-effect waves-light function-percent"
+          class="btn col s3 waves-effect waves-light function"
           type="button"
           name="percent"
         >
@@ -185,7 +185,9 @@ export default {
   mounted() {
     const card = document.querySelector(".calculator");
     const container = document.querySelector("body");
-    const buttons = document.querySelectorAll(".btn");
+    const inputButtons = document.querySelectorAll(".btn.input-btn");
+    const operationButtons = document.querySelectorAll(".btn.operation");
+    const functionButtons = document.querySelectorAll(".function");
 
     //Moving Animation Event
     container.addEventListener("mousemove", e => {
@@ -197,17 +199,36 @@ export default {
     container.addEventListener("mouseenter", () => {
       card.style.transition = "all 0.3s ease";
 
-      buttons.forEach(btn => {
+      inputButtons.forEach(btn => {
         btn.style.transform = "translateZ(50px)";
+        btn.addEventListener("mouseenter", e => {
+          console.log(e);
+          e.target.style.transform = "translateZ(85px)";
+        });
+        btn.addEventListener("mouseleave", e => {
+          e.target.style.transform = "translateZ(50px)";
+        });
+      });
+      operationButtons.forEach(btn => {
+        btn.style.transform = "translateZ(35px)";
+      });
+      functionButtons.forEach(btn => {
+        btn.style.transform = "translateZ(20px)";
       });
     });
     //Animate Out
     container.addEventListener("mouseleave", () => {
       card.style.transition = "all 0.3s ease";
       card.style.transform = `rotateY(0deg) rotateX(0deg)`;
-    });
-    buttons.forEach(btn => {
-      btn.style.transform = "translateZ(0)";
+      inputButtons.forEach(btn => {
+        btn.style.transform = "translateZ(0)";
+      });
+      operationButtons.forEach(btn => {
+        btn.style.transform = "translateZ(0)";
+      });
+      functionButtons.forEach(btn => {
+        btn.style.transform = "translateZ(0)";
+      });
     });
     this.setupButtons();
   },
