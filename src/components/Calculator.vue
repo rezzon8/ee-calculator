@@ -208,6 +208,9 @@ export default {
         btn.addEventListener("mouseleave", e => {
           e.target.style.transform = "translateZ(50px)";
         });
+        btn.addEventListener("click", e => {
+          e.target.style.transform = "translateZ(50px)";
+        });
       });
       operationButtons.forEach(btn => {
         btn.style.transform = "translateZ(35px)";
